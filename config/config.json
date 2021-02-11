@@ -9,11 +9,20 @@
           "manifest": "./src/webparts/welcomeReactJs/WelcomeReactJsWebPart.manifest.json"
         }
       ]
+    },
+    "welcome-react-js-hooks-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/welcomeReactJsHooks/WelcomeReactJsHooksWebPart.js",
+          "manifest": "./src/webparts/welcomeReactJsHooks/WelcomeReactJsHooksWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
     "WelcomeReactJsWebPartStrings": "lib/webparts/welcomeReactJs/loc/{locale}.js",
-    "ControlStrings": "node_modules/@pnp/spfx-controls-react/lib/loc/{locale}.js"
+    "ControlStrings": "node_modules/@pnp/spfx-controls-react/lib/loc/{locale}.js",
+    "WelcomeReactJsHooksWebPartStrings": "lib/webparts/welcomeReactJsHooks/loc/{locale}.js"
   }
 }
