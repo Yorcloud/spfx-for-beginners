@@ -2,9 +2,7 @@
 
 ## Summary
 
-Short summary on functionality and used technologies.
-
-[picture of the solution in action, if possible]
+Supporting Code and Assets for RobertsDevTalk Sharepoint Framework for Beginners course
 
 ## Used SharePoint Framework Version
 
@@ -19,7 +17,7 @@ Short summary on functionality and used technologies.
 
 ## Prerequisites
 
-> Any special pre-requisites?
+- Dev Environment Set up
 
 ## Solution
 
@@ -31,8 +29,7 @@ folder name | Author details (name, company, twitter alias with link)
 
 Version|Date|Comments
 -------|----|--------
-1.1|March 10, 2021|Update comment
-1.0|January 29, 2021|Initial release
+1.0|February 11, 2021|Initial release
 
 ## Disclaimer
 
@@ -56,9 +53,9 @@ Description of the extension that expands upon high-level summary above.
 
 This extension illustrates the following concepts:
 
-- topic 1
-- topic 2
-- topic 3
+- Webpart using ReactJS
+- Webpart using ReactJS Hooks
+- Webpart using no Framework
 
 > Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance.
 
