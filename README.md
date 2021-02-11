@@ -1,8 +1,10 @@
-# sp-fx-for-beginners
+# spfx-for-beginners
 
 ## Summary
 
 Supporting Code and Assets for RobertsDevTalk Sharepoint Framework for Beginners course
+
+Course starting in March 2021 on our site: https://www.youtube.com/channel/UCy9dNRFvbZP0SqoF5WY0eDw
 
 ## Used SharePoint Framework Version
 
@@ -23,7 +25,7 @@ Supporting Code and Assets for RobertsDevTalk Sharepoint Framework for Beginners
 
 Solution|Author(s)
 --------|---------
-folder name | Author details (name, company, twitter alias with link)
+spfx-for-beginners | Rob Pearmain (www.yorcloud.com)
 
 ## Version history
 
@@ -53,9 +55,9 @@ Description of the extension that expands upon high-level summary above.
 
 This extension illustrates the following concepts:
 
-- Webpart using ReactJS
-- Webpart using ReactJS Hooks
-- Webpart using no Framework
+- Webpart using ReactJS (Welcome (ReactJS))
+- Webpart using ReactJS Hooks (Welcome (ReactJS Hooks))
+- Webpart using no Framework (Welcome)
 
 > Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance.
 
