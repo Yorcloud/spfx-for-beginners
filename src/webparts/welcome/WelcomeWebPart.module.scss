@@ -1,0 +1,29 @@
+@import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
+
+.left {
+	text-align: left;
+  }
+  
+  .right {
+	text-align: right;
+  }
+  .center {
+	text-align: center;
+  }
+  
+ 
+  .welcome {
+	.div {
+	  padding: 0;
+	  margin: 0;
+	}
+
+	.webpartTitle {
+		font-size: 24px;
+		font-weight: lighter;
+		height: 48px;
+	}
+  
+  
+  }
+  

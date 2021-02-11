@@ -1,0 +1,32 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+  "id": "0b2b9451-5b20-45e9-846f-66945be6d548",
+  "alias": "WelcomeWebPart",
+  "componentType": "WebPart",
+  "supportsThemeVariants": true,
+  "version": "*",
+  "manifestVersion": 2,
+  "requiresCustomScript": false,
+  "supportedHosts": ["SharePointWebPart"],
+
+  "preconfiguredEntries": [{
+    "groupId": "5c03119e-3074-46fd-976b-c60198311f70", // Other
+    "group": { "default": "Other" },
+    "title": { "default": "Welcome" },
+    "description": { "default": "Welcome Webpart with No Javascript Framework" },
+	"officeFabricIconFontName": "Message",
+	"properties": {
+	  "title": "Welcome",
+	  "messagestyle": "h2",
+	  "textalignment": "left",
+	  "showname": "full",
+	  "showtimebasedmessage": false,
+	  "message": "Hello",
+	  "morningmessage": "Good Morning",
+	  "afternoonmessage": "Good Afternoon",
+	  "eveningmessage": "Good Evening",
+	  "afternoonbegintime": 12,
+	  "eveningbegintime": 17
+	}
+  }]
+}
