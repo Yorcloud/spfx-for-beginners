@@ -16,7 +16,7 @@
     "description": { "default": "Welcome Webpart with No Javascript Framework" },
 	"officeFabricIconFontName": "Message",
 	"properties": {
-	  "title": "Welcome",
+	  "title": "Welcome (No Javascript Framework)",
 	  "messagestyle": "h2",
 	  "textalignment": "left",
 	  "showname": "full",

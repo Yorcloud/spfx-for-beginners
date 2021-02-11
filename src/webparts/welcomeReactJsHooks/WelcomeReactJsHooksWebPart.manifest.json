@@ -15,7 +15,7 @@
     "description": { "default": "Welcome using ReactJS Hooks" },
 	"officeFabricIconFontName": "Message",
 	"properties": {
-	  "title": "Welcome",
+	  "title": "Welcome (ReactJS Hooks)",
 	  "messagestyle": "h2",
 	  "textalignment": "left",
 	  "showname": "full",

@@ -19,7 +19,7 @@
       },
       "officeFabricIconFontName": "Message",
       "properties": {
-        "title": "Welcome",
+        "title": "Welcome (ReactJS)",
         "messagestyle": "h2",
         "textalignment": "left",
         "showname": "full",

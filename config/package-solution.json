@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
-    "name": "sp-fx-for-beginners-client-side-solution",
+    "name": "SPFx for beginners Webparts",
     "id": "155d5a11-c2db-4672-9cd1-e8bacf30c14c",
     "version": "1.0.0.0",
     "includeClientSideAssets": true,
@@ -15,6 +15,6 @@
     }
   },
   "paths": {
-    "zippedPackage": "solution/sp-fx-for-beginners.sppkg"
+    "zippedPackage": "solution/spfx-for-beginners.sppkg"
   }
 }
