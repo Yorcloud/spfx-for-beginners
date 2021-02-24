@@ -206,8 +206,8 @@ export default class WelcomeReactJsWebPart extends BaseClientSideWebPart<IWelcom
                       text: "H4",
                     },
                     {
-                      key: "normal",
-                      text: "Normal",
+                      key: "p",
+                      text: "P",
                     },
                   ],
                 }),

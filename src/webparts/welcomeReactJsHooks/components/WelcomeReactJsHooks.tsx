@@ -8,7 +8,7 @@ import { FunctionComponent, useEffect, useState } from "react";
 const WelcomeReactJsHooks: FunctionComponent<IWelcomeReactJsHooksProps> = (
   props
 ) => {
-  const [messageContent, setMessageContent] = useState("");
+  const [messageContent, setMessageContent] = useState<React.ReactElement>(null);
 
   const { semanticColors }: IReadonlyTheme = props.themeVariant;
 
@@ -39,7 +39,6 @@ const WelcomeReactJsHooks: FunctionComponent<IWelcomeReactJsHooksProps> = (
         ? styles.right
         : styles.center;
 
-    let messagecontent = null;
     let name = "";
     switch (props.showname) {
       case "full": {
@@ -51,43 +50,15 @@ const WelcomeReactJsHooks: FunctionComponent<IWelcomeReactJsHooksProps> = (
         break;
       }
     }
-    switch (props.messagestyle) {
-      case "h3":
-        messagecontent = (
-          <h3 className={textalign} style={{ color: semanticColors.bodyText }}>
-            {message} {name}
-          </h3>
-        );
-        break;
-      case "h2":
-        messagecontent = (
-          <h2 className={textalign} style={{ color: semanticColors.bodyText }}>
-            {message} {name}
-          </h2>
-        );
-        break;
-      case "h1":
-        messagecontent = (
-          <h1 className={textalign} style={{ color: semanticColors.bodyText }}>
-            {message} {name}
-          </h1>
-        );
-        break;
-      case "h4":
-        messagecontent = (
-          <h4 className={textalign} style={{ color: semanticColors.bodyText }}>
-            {message} {name}
-          </h4>
-        );
-        break;
-      default:
-        messagecontent = (
-          <p className={textalign} style={{ color: semanticColors.bodyText }}>
-            {message} {name}
-          </p>
-        );
-        break;
-    }
+
+    const messagecontent = React.createElement(
+      props.messagestyle,
+      {
+        className: textalign,
+        style: { color: semanticColors.bodyText },
+      },
+      `${message} ${name}`
+    );
 
     setMessageContent(messagecontent);
   }, [props]);

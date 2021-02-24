@@ -92,8 +92,8 @@ export default class WelcomeWebPart extends BaseClientSideWebPart<IWelcomeWebPar
         ? styles.right
         : styles.center;
 
-    let messagecontent = null;
     let name = "";
+
     switch (this.properties.showname) {
       case "full": {
         name = this.context.pageContext.user.displayName;
@@ -104,45 +104,13 @@ export default class WelcomeWebPart extends BaseClientSideWebPart<IWelcomeWebPar
         break;
       }
     }
-    switch (this.properties.messagestyle) {
-      case "h3":
-        messagecontent = `<h3
-              class='${textalign}'
-              style='color: ${semanticColors.bodyText}'
-            >
-              ${message} ${name}
-            </h3>`;
-        break;
-      case "h2":
-        messagecontent = `<h2
-				  class='${textalign}'
-				  style='color: ${semanticColors.bodyText}'
-				>
-				  ${message} ${name}
-				</h2>`;
-        break;
-      case "h1":
-        messagecontent = `<h1
-				  class='${textalign}'
-				  style='color: ${semanticColors.bodyText}'
-				>
-				  ${message} ${name}
-				</h1>`;
-        break;
-      case "h4":
-        messagecontent = `<h4
-				  class='${textalign}'
-				  style='color: ${semanticColors.bodyText}'
-				>
-				  ${message} ${name}
-				</h4>`;
-        break;
-      default:
-        messagecontent = `<p class='${textalign}' style='color: ${semanticColors.bodyText}'>
-              ${message} ${name}
-            </p>`;
-        break;
-    }
+
+    const messagecontent = `<${this.properties.messagestyle}
+		class='${textalign}'
+		style='color: ${semanticColors.bodyText}'
+	  >
+		${message} ${name}
+	  </${this.properties.messagestyle}>`;
 
     this.domElement.innerHTML = `
       <div class=${styles.welcome} style=${{
@@ -258,8 +226,8 @@ export default class WelcomeWebPart extends BaseClientSideWebPart<IWelcomeWebPar
                       text: "H4",
                     },
                     {
-                      key: "normal",
-                      text: "Normal",
+                      key: "p",
+                      text: "P",
                     },
                   ],
                 }),

@@ -206,8 +206,8 @@ export default class WelcomeReactJsHooksWebPart extends BaseClientSideWebPart<IW
                       text: "H4",
                     },
                     {
-                      key: "normal",
-                      text: "Normal",
+                      key: "p",
+                      text: "P",
                     },
                   ],
                 }),
