@@ -1,0 +1,21 @@
+@import "~office-ui-fabric-react/dist/sass/References.scss";
+
+.outerrdiv {
+  background-color: transparent;
+}
+
+[class^="ControlZoneEmphasisBackground"] {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+//Update am 09.09.2019
+
+[class^="ControlZone--emph"] {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+:global #workbenchPageContent {
+  max-width: 100% !important;
+}
+
+
