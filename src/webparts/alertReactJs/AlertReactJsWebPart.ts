@@ -11,9 +11,20 @@ import { BaseClientSideWebPart } from "@microsoft/sp-webpart-base";
 import * as strings from "AlertReactJsWebPartStrings";
 import Welcome from "./components/AlertReactJs";
 import { IAlertReactJsProps } from "./components/IAlertReactJsProps";
-import { PropertyFieldDateTimePicker, DateConvention, TimeConvention, IDateTimeFieldValue } from '@pnp/spfx-property-controls/lib/PropertyFieldDateTimePicker';
-import { PropertyFieldListPicker, PropertyFieldListPickerOrderBy} from '@pnp/spfx-property-controls/lib/PropertyFieldListPicker';
-import { PropertyFieldCodeEditor, PropertyFieldCodeEditorLanguages} from '@pnp/spfx-property-controls/lib/PropertyFieldCodeEditor';
+import {
+  PropertyFieldDateTimePicker,
+  DateConvention,
+  TimeConvention,
+  IDateTimeFieldValue,
+} from "@pnp/spfx-property-controls/lib/PropertyFieldDateTimePicker";
+import {
+  PropertyFieldListPicker,
+  PropertyFieldListPickerOrderBy,
+} from "@pnp/spfx-property-controls/lib/PropertyFieldListPicker";
+import {
+  PropertyFieldCodeEditor,
+  PropertyFieldCodeEditorLanguages,
+} from "@pnp/spfx-property-controls/lib/PropertyFieldCodeEditor";
 import {
   ThemeProvider,
   ThemeChangedEventArgs,
@@ -99,8 +110,8 @@ export default class WelcomeWebPart extends BaseClientSideWebPart<IWelcomeWebPar
         enablereadmessage: this.properties.enablereadmessage,
         readmessage: this.properties.readmessage,
         readlist: this.properties.readlist,
-		displayMode: this.displayMode,
-		showasmodal: this.properties.showasmodal,
+        displayMode: this.displayMode,
+        showasmodal: this.properties.showasmodal,
 
         updateProperty: (value: string) => {
           this.properties.title = value;
@@ -108,7 +119,7 @@ export default class WelcomeWebPart extends BaseClientSideWebPart<IWelcomeWebPar
         loading: this._loading,
         themeVariant: this._themeVariant,
         context: this.context,
-		messagelistid: this.properties.messagelistid
+        messagelistid: this.properties.messagelistid,
       }
     );
 
@@ -124,27 +135,27 @@ export default class WelcomeWebPart extends BaseClientSideWebPart<IWelcomeWebPar
   }
 
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
-
-	let bodyEditor = this.properties.showbodyashtml ? 
-	PropertyFieldCodeEditor('body', {
-		label: 'Edit HTML Code',
-		panelTitle: 'Edit HTML Code',
-		initialValue: this.properties.body,
-		onPropertyChange: this.onPropertyPaneFieldChanged,
-		properties: this.properties,
-		disabled: false,
-		key: 'codeEditorFieldId',
-		language: PropertyFieldCodeEditorLanguages.HTML,
-		options: {
-		  wrap: true,
-		  fontSize: 12,
-		  // more options
-		}
-	  }) : PropertyPaneTextField("body", {
-		label: strings.BodyLabel,
-		multiline: true,
-		rows: 10,
-	  });
+    let bodyEditor = this.properties.showbodyashtml
+      ? PropertyFieldCodeEditor("body", {
+          label: "Edit HTML Code",
+          panelTitle: "Edit HTML Code",
+          initialValue: this.properties.body,
+          onPropertyChange: this.onPropertyPaneFieldChanged,
+          properties: this.properties,
+          disabled: false,
+          key: "codeEditorFieldId",
+          language: PropertyFieldCodeEditorLanguages.HTML,
+          options: {
+            wrap: true,
+            fontSize: 12,
+            // more options
+          },
+        })
+      : PropertyPaneTextField("body", {
+          label: strings.BodyLabel,
+          multiline: true,
+          rows: 10,
+        });
 
     return {
       pages: [
@@ -156,19 +167,19 @@ export default class WelcomeWebPart extends BaseClientSideWebPart<IWelcomeWebPar
             {
               groupName: strings.BasicGroupName,
               groupFields: [
-				PropertyFieldListPicker('messagelistid', {
-					label: 'Select a list',
-					selectedList: this.properties.messagelistid,
-					includeHidden: false,
-					orderBy: PropertyFieldListPickerOrderBy.Title,
-					disabled: false,
-					onPropertyChange: this.onPropertyPaneFieldChanged.bind(this),
-					properties: this.properties,
-					context: this.context,
-					onGetErrorMessage: null,
-					deferredValidationTime: 0,
-					key: 'listPickerFieldId'
-				  }),
+                PropertyFieldListPicker("messagelistid", {
+                  label: "Select a list",
+                  selectedList: this.properties.messagelistid,
+                  includeHidden: false,
+                  orderBy: PropertyFieldListPickerOrderBy.Title,
+                  disabled: false,
+                  onPropertyChange: this.onPropertyPaneFieldChanged.bind(this),
+                  properties: this.properties,
+                  context: this.context,
+                  onGetErrorMessage: null,
+                  deferredValidationTime: 0,
+                  key: "listPickerFieldId",
+                }),
                 PropertyPaneToggle("showtitle", {
                   label: strings.ShowTitleFieldLabel,
                 }),
@@ -182,31 +193,30 @@ export default class WelcomeWebPart extends BaseClientSideWebPart<IWelcomeWebPar
                 ,
                 PropertyPaneTextField("readmessage", {
                   label: strings.ReadMessageLabel,
-				}),
-				PropertyPaneToggle("showasmodal", {
-					label: strings.ShowAsModalLabel,
-				  }),
+                }),
+                PropertyPaneToggle("showasmodal", {
+                  label: strings.ShowAsModalLabel,
+                }),
                 PropertyPaneToggle("enablestartdate", {
                   label: strings.EnableStartDateLabel,
-				}),
-				PropertyFieldDateTimePicker("startdate", {
-					initialDate: this.properties.startdate,
-					label: strings.StartDateLabel,
-					properties: this.properties,
-					onPropertyChange: this.onPropertyPaneFieldChanged,
-					key: 'startdateFieldId'}
-				),
+                }),
+                PropertyFieldDateTimePicker("startdate", {
+                  initialDate: this.properties.startdate,
+                  label: strings.StartDateLabel,
+                  properties: this.properties,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
+                  key: "startdateFieldId",
+                }),
                 PropertyPaneToggle("enableenddate", {
                   label: strings.EnableEndDateLabel,
-				}),
-				PropertyFieldDateTimePicker("enddate", {
-					initialDate: this.properties.enddate,
-					label: strings.EndDateLabel,
-					properties: this.properties,
-					onPropertyChange: this.onPropertyPaneFieldChanged,
-					key: 'enddateFieldId'}
-				)
-			
+                }),
+                PropertyFieldDateTimePicker("enddate", {
+                  initialDate: this.properties.enddate,
+                  label: strings.EndDateLabel,
+                  properties: this.properties,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
+                  key: "enddateFieldId",
+                }),
               ],
             },
           ],
@@ -215,4 +225,3 @@ export default class WelcomeWebPart extends BaseClientSideWebPart<IWelcomeWebPar
     };
   }
 }
-

@@ -92,7 +92,7 @@ export default class Welcome extends React.Component<
 
     // Get Item from List
     if (this.props.enablereadmessage) {
-      const _list = sp.web.lists.getById(this.props.messagelistid)
+      const _list = sp.web.lists.getById(this.props.messagelistid);
       let readitems = await _list.items
         .top(1)
         .filter(`Title eq '${_localuser.LoginName}'`)
