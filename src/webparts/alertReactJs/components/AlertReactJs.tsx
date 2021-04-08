@@ -116,11 +116,24 @@ export default class Welcome extends React.Component<
     isChecked: boolean
   ) {
     // Add a record to the list
+
     const _list = sp.web.lists.getById(this.props.messagelistid);
     const iar: IItemAddResult = await _list.items.add({
       Title: this.state.currentUser.LoginName,
     });
     this.setState({ hasreadmessage: true });
+
+	/*
+	_list.items.getById(1).update({
+		Title: "Updated Title"
+	})
+	
+	_list.items.getById(1).delete();
+	
+	*/
+
+	
+
   }
 
   public render(): React.ReactElement<IAlertReactJsProps> {
